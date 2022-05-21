@@ -17,8 +17,8 @@
 ## Contributors
 |                             김희빈                             |                            김경린                           |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![Server_Github](이미지) | ![Server_Github](이미지) |
-|              [kkl4846](https://github.com/kkl4846)               |             [kmebin](https://github.com/kmebin)              |
+| <img src="https://user-images.githubusercontent.com/72112845/169653355-aa73030a-0213-4e85-af10-53c5cde7b8d7.PNG" width="300"/> | <img src="https://user-images.githubusercontent.com/72112845/169653384-0c089e81-a7b3-4d75-adfe-a551164190d9.png" width="300"/>  |
+|              [kmebin](https://github.com/kmebin)               |             [kkl4846](https://github.com/kkl4846)              |
 
 <hr>
 <br/>
