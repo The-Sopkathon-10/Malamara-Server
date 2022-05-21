@@ -3,11 +3,23 @@ import { userCreateDto } from "../interfaces/user/UserCreateDto";
 import statusCode from "../modules/statusCode";
 import message from "../modules/responseMessage";
 import { success, fail } from "../modules/util";
-import userService from "../services/userService";
+import { userService } from "../services";
+import { validationResult } from "express-validator";
 
+/**
+ *  @route POST /user
+ *  @desc   유저 생성
+ *  @access Public
+ */
 
 const createUser = async(req: Request, res: Response) => {
-    const user = req.body;
+
+    const error = await validationResult(req);
+
+    if (!error.isEmpty()) {
+        return res.status(statusCode.BAD_REQUEST).send(fail(statusCode.BAD_REQUEST, message.BAD_REQUEST));
+    }
+    const user: userCreateDto = req.body;
     try{
 
         const data = await userService.createUser(user);

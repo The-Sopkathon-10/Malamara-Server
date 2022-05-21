@@ -1,8 +1,9 @@
 import { Router } from "express";
-import userControllers from "../controllers/userControllers";
+import { body } from "express-validator/check";
+import { userController } from "../controllers";
 
 const router: Router = Router();
 
-router.post('/', userControllers.createUser);
+router.post("/", [body("nickname").notEmpty()], userController.createUser);
 
 export default router;
