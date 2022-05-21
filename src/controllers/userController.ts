@@ -1,36 +1,8 @@
-import express, { Request, Response } from "express";
-import { userCreateDto } from "../interfaces/user/UserCreateDto";
+import { Request, Response } from "express";
 import statusCode from "../modules/statusCode";
 import message from "../modules/responseMessage";
 import { success, fail } from "../modules/util";
 import { userService } from "../services";
-import { validationResult } from "express-validator";
-
-/**
- *  @route POST /user
- *  @desc 유저 생성
- *  @access Public
- */
-
-const createUser = async (req: Request, res: Response) => {
-  const reqError = validationResult(req);
-
-  if (!reqError.isEmpty()) {
-    return res.status(statusCode.BAD_REQUEST).send(fail(statusCode.BAD_REQUEST, message.BAD_REQUEST));
-  }
-  const user: userCreateDto = req.body;
-
-  try {
-    const data = await userService.createUser(user);
-
-    res.status(statusCode.OK).send(success(statusCode.OK, message.CREATED_USER_SUCCESS, data));
-  } catch (error) {
-    console.log(error);
-    return res
-      .status(statusCode.INTERNAL_SERVER_ERROR)
-      .send(fail(statusCode.INTERNAL_SERVER_ERROR, message.INTERNAL_SERVER_ERROR));
-  }
-};
 
 /**
  *  @route GET /user/:userId/decision
@@ -57,6 +29,5 @@ const getUserDecisions = async (req: Request, res: Response) => {
 };
 
 export default {
-  createUser,
   getUserDecisions,
 };
