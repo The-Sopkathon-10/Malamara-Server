@@ -6,6 +6,9 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  profileImage: {
+    type: String,
+  },
 });
 
 export default mongoose.model<UserInfo & mongoose.Document>("User", UserSchema);

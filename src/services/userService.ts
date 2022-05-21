@@ -1,7 +1,5 @@
 import { BaseResponseDTO } from "../interfaces/base/baseDTO";
-import { QuestionInfo } from "../interfaces/question/questionInfo";
 import { userCreateDto } from "../interfaces/user/userCreateDto";
-import { UserInfo } from "../interfaces/user/userInfo";
 import { userQuestions, userQuestionsResponseDto } from "../interfaces/user/userQuestionsResponseDto";
 import Question from "../models/Question";
 import User from "../models/User";
@@ -27,7 +25,7 @@ const createUser = async (user: userCreateDto): Promise<BaseResponseDTO> => {
 
 const getUserDecisions = async (userId: string): Promise<userQuestionsResponseDto | null> => {
   try {
-    const questions = await Question.find({ user: userId }).populate("user", { nickname: 1 });
+    const questions = await Question.find({ user: userId }).populate("user", ["nickname", "profileImage"]);
 
     const questionsInfo: userQuestions[] = questions.map((obj) => ({
       question: obj.question,
@@ -37,6 +35,7 @@ const getUserDecisions = async (userId: string): Promise<userQuestionsResponseDt
 
     const userAndQuestionInfo: userQuestionsResponseDto = {
       nickname: questions[0].user.nickname,
+      profileImage: questions[0].user.profileImage,
       questions: questionsInfo,
     };
 
