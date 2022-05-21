@@ -8,17 +8,18 @@ import { validationResult } from "express-validator";
 
 /**
  *  @route POST /user
- *  @desc   유저 생성
+ *  @desc 유저 생성
  *  @access Public
  */
 
 const createUser = async (req: Request, res: Response) => {
-  const error = await validationResult(req);
+  const reqError = validationResult(req);
 
-  if (!error.isEmpty()) {
+  if (!reqError.isEmpty()) {
     return res.status(statusCode.BAD_REQUEST).send(fail(statusCode.BAD_REQUEST, message.BAD_REQUEST));
   }
   const user: userCreateDto = req.body;
+
   try {
     const data = await userService.createUser(user);
 
@@ -33,7 +34,7 @@ const createUser = async (req: Request, res: Response) => {
 
 /**
  *  @route GET /user/:userId/decision
- *  @desc   유저 결정 리스트 조회
+ *  @desc 유저 결정 리스트 조회
  *  @access Public
  */
 
@@ -42,7 +43,6 @@ const getUserDecisions = async (req: Request, res: Response) => {
 
   try {
     const data = await userService.getUserDecisions(userId);
-
 
     if (!data) {
       return res.status(statusCode.NOT_FOUND).send(fail(statusCode.NOT_FOUND, message.READ_USER_QUESTIONS_FAIL));
