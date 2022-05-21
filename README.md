@@ -28,8 +28,7 @@
 <br/>
 
 ## 🌯 Collection
-
-이따가~
+<img src="https://user-images.githubusercontent.com/72112845/169666700-f2591050-bd46-451e-9edd-1234d12b22c0.png" width="700"/>
 
 <hr>
 </br>
