@@ -10,7 +10,6 @@ const createQuestion = async (questionCreateDTO: QuestionCreateDTO) => {
     const question = new Question({
       user: questionCreateDTO.userId,
       question: questionCreateDTO.question,
-      choices: questionCreateDTO.choices,
     });
 
     await question.save();
