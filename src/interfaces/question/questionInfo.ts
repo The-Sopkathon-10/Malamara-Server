@@ -4,5 +4,5 @@ export interface QuestionInfo {
   user: UserInfo;
   question: string;
   decision: string;
-  content: string;
+  review: string;
 }
