@@ -4,6 +4,9 @@ const message = {
   BAD_REQUEST: "잘못된 요청",
   INTERNAL_SERVER_ERROR: "서버 내부 오류",
 
+  // 질문
+  CREATE_QUESTION_SUCCESS: "질문 생성 성공",
+
 
   // user
   CREATED_USER_SUCCESS: "유저 생성 성공",
