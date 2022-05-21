@@ -25,12 +25,16 @@ const createUser = async (user: userCreateDto): Promise<BaseResponseDTO> => {
 
 const getUserDecisions = async (userId: string): Promise<userQuestionsResponseDto | null> => {
   try {
-    const questions = await Question.find({ user: userId }).populate("user", ["nickname", "profileImage"]);
+    const questions = await Question.find({ user: userId })
+      .sort({ createdAt: -1 })
+      .populate("user", ["nickname", "profileImage"]);
 
     const questionsInfo: userQuestions[] = questions.map((obj) => ({
+      _id: obj._id,
       question: obj.question,
       decision: obj.decision,
-      review: obj.review,
+      review: obj.review ? obj.review : "",
+      isExecuted: obj.isExecuted,
     }));
 
     const userAndQuestionInfo: userQuestionsResponseDto = {

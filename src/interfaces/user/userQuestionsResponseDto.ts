@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 export interface userQuestionsResponseDto {
   nickname: string;
   profileImage: string;
@@ -6,7 +8,9 @@ export interface userQuestionsResponseDto {
 }
 
 export interface userQuestions {
+  _id: mongoose.Types.ObjectId;
   question: string;
   decision: string;
-  review?: string;
+  review: string;
+  isExecuted: boolean;
 }

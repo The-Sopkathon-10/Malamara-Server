@@ -4,4 +4,5 @@ export interface DecisionCreateDTO {
   userId: mongoose.Types.ObjectId;
   question: string;
   decision: string;
+  isLiked: boolean;
 }

@@ -1,5 +1,4 @@
 import { DecisionCreateDTO } from "../interfaces/question/questionDTO";
-import { BaseResponseDTO } from "../interfaces/base/baseDTO";
 import Question from "../models/Question";
 import { reviewCreateDto } from "../interfaces/question/reviewCreateDto";
 
@@ -12,15 +11,10 @@ const createDecision = async (decisionCreateDTO: DecisionCreateDTO) => {
       user: decisionCreateDTO.userId,
       question: decisionCreateDTO.question,
       decision: decisionCreateDTO.decision,
+      isExecuted: decisionCreateDTO.isLiked,
     });
 
     await question.save();
-
-    const data: BaseResponseDTO = {
-      _id: question.id,
-    };
-
-    return data;
   } catch (error) {
     console.log(error);
     throw error;

@@ -5,4 +5,5 @@ export interface QuestionInfo {
   question: string;
   decision: string;
   review: string;
+  isExecuted: boolean;
 }
