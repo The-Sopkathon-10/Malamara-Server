@@ -7,7 +7,11 @@ import Question from "../models/Question";
  */
 const createQuestion = async (questionCreateDTO: QuestionCreateDTO) => {
   try {
-    const question = new Question(questionCreateDTO);
+    const question = new Question({
+      user: questionCreateDTO.userId,
+      question: questionCreateDTO.question,
+      choices: questionCreateDTO.choices,
+    });
 
     await question.save();
 

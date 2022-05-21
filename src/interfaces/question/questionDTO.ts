@@ -1,5 +1,7 @@
+import mongoose from "mongoose";
+
 export interface QuestionCreateDTO {
-  userId: string;
+  userId: mongoose.Types.ObjectId;
   question: string;
   choices?: string[];
 }
