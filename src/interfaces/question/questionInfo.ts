@@ -1,6 +1,6 @@
 export interface QuestionInfo {
   question: string;
-  choices: [string];
+  choices: string[];
   decision: string;
   content: string;
 }

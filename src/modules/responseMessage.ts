@@ -6,11 +6,11 @@ const message = {
 
   // 질문
   CREATE_QUESTION_SUCCESS: "질문 생성 성공",
-
+  READ_RESULT_SUCCESS: "질문 결과 조회 성공",
+  NO_QUESTION: "존재하지 않는 질문입니다.",
 
   // user
   CREATED_USER_SUCCESS: "유저 생성 성공",
-  
 };
 
 export default message;
