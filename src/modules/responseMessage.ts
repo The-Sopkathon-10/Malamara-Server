@@ -6,6 +6,11 @@ const message = {
 
   // 질문
   CREATE_QUESTION_SUCCESS: "질문 생성 성공",
+
+
+  // user
+  CREATED_USER_SUCCESS: "유저 생성 성공",
+  
 };
 
 export default message;
