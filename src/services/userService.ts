@@ -36,6 +36,7 @@ const getUserDecisions = async (userId: string): Promise<userQuestionsResponseDt
     const userAndQuestionInfo: userQuestionsResponseDto = {
       nickname: questions[0].user.nickname,
       profileImage: questions[0].user.profileImage,
+      count: questionsInfo.length,
       questions: questionsInfo,
     };
 
