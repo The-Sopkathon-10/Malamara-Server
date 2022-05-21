@@ -8,7 +8,7 @@ export interface userQuestionsResponseDto {
 }
 
 export interface userQuestions {
-  _id: mongoose.Types.ObjectId;
+  id: mongoose.Types.ObjectId;
   question: string;
   decision: string;
   review: string;

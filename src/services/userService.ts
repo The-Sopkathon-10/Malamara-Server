@@ -9,7 +9,7 @@ const getUserDecisions = async (userId: string): Promise<userQuestionsResponseDt
       .populate("user", ["nickname", "profileImage"]);
 
     const questionsInfo: userQuestions[] = questions.map((obj) => ({
-      _id: obj._id,
+      id: obj._id,
       question: obj.question,
       decision: obj.decision,
       review: obj.review ? obj.review : "",
