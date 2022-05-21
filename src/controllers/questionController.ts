@@ -4,7 +4,7 @@ import sc from "../modules/statusCode";
 import rm from "../modules/responseMessage";
 import drawRandom from "../modules/deciseRandom";
 import { success, fail } from "../modules/util";
-import { QuestionCreateDTO } from "../interfaces/question/questionDTO";
+import { QuestionCreateDTO, DecisionCreateDTO } from "../interfaces/question/questionDTO";
 import { questionService } from "../services";
 
 /**
@@ -22,7 +22,7 @@ const createQuestion = async (req: Request, res: Response) => {
   try {
     const data = await questionService.createQuestion(questionCreateDTO);
 
-    return res.status(sc.CREATED).send(success(sc.CREATED, rm.CREATE_QUESTION_SUCCESS, data));
+    return res.status(sc.OK).send(success(sc.OK, rm.CREATE_QUESTION_SUCCESS, data));
   } catch (error) {
     console.log(error);
 
@@ -31,21 +31,22 @@ const createQuestion = async (req: Request, res: Response) => {
 };
 
 /**
- *  @route GET /qusetion/:questionId/result
- *  @desc 질문 결과 조회
+ *  @route POST /question/:questionId/decision
+ *  @desc 질문 결과 결정
  *  @access Public
  */
-const getResult = async (req: Request, res: Response) => {
+const createDecision = async (req: Request, res: Response) => {
   const { questionId } = req.params;
+  const reqError = validationResult(req);
+
+  if (!reqError.isEmpty()) return res.status(sc.BAD_REQUEST).send(fail(sc.BAD_REQUEST, rm.NULL_VALUE));
+
+  const decisionCreateDTO: DecisionCreateDTO = req.body;
 
   try {
-    const choices = await questionService.getChoices(questionId);
+    await questionService.createDecision(questionId, decisionCreateDTO);
 
-    if (!choices) return res.status(sc.BAD_REQUEST).send(fail(sc.BAD_REQUEST, rm.NO_QUESTION));
-
-    const result = drawRandom(choices);
-
-    return res.status(sc.OK).send(success(sc.OK, rm.READ_RESULT_SUCCESS, { result }));
+    return res.status(sc.OK).send(success(sc.OK, rm.CREATE_DECISION_SUCCESS));
   } catch (error) {
     console.log(error);
 
@@ -55,5 +56,5 @@ const getResult = async (req: Request, res: Response) => {
 
 export default {
   createQuestion,
-  getResult,
+  createDecision,
 };
