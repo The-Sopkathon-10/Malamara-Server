@@ -6,6 +6,6 @@ export interface QuestionCreateDTO {
   choices?: string[];
 }
 
-export interface ChoicesDTO {
-  choices: string[];
+export interface DecisionCreateDTO {
+  decision: string;
 }
