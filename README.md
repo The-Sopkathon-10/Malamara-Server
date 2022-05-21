@@ -2,12 +2,15 @@
 
 > 이제 고민 그만하고, 김밥이나 말자. Don't worry, Just roll it!
 
+<img src="https://user-images.githubusercontent.com/72112845/169669473-4f0909c8-aaf4-471d-b4c0-a249bc02a359.png"/>
 
 <br/><br/>
 
 ## 🌯 Server Architecture
 <img src="https://img.shields.io/badge/TypeScript-2d79c7?style=flat-square&logo=TypeScript&logoColor=white"/> <img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=Express&logoColor=white"/> <img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=MongoDB&logoColor=white"/> <img src="https://img.shields.io/badge/Mongoose-47A248?style=flat-square&logo=MongoDB&logoColor=white"/>
- <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=AmazonAWS&logoColor=white"/> 
+ <img src="https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=AmazonAWS&logoColor=white"/> <br>
+ <img src="https://user-images.githubusercontent.com/72112845/169669423-4f37228a-f9f7-4dd3-a7e9-0ecb3f20c3c2.png" width="700"/>
+
 
 </br>
 
