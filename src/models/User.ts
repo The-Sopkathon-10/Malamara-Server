@@ -6,12 +6,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  questions: [
-    {
-      type: mongoose.Types.ObjectId,
-      ref: "Question",
-    },
-  ],
 });
 
 export default mongoose.model<UserInfo & mongoose.Document>("User", UserSchema);
