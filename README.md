@@ -11,7 +11,7 @@
 
 </br>
 
-## Contributors
+## 🌯 Contributors
 |                             김희빈                             |                            김경린                           |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 | <img src="https://user-images.githubusercontent.com/72112845/169653355-aa73030a-0213-4e85-af10-53c5cde7b8d7.PNG" width="300"/> | <img src="https://user-images.githubusercontent.com/72112845/169653384-0c089e81-a7b3-4d75-adfe-a551164190d9.png" width="300"/>  |
@@ -20,14 +20,14 @@
 <hr>
 <br/>
 
-## API Docs
+## 🌯 API Docs
 
 ### 🔗 [API Docs](https://coordinated-vein-c40.notion.site/API-Docs-900615de4e8549918626778667fb2416)
 
 <hr>
 <br/>
 
-## Collection
+## 🌯 Collection
 
 이따가~
 
@@ -35,14 +35,13 @@
 </br>
 
 
-## Role
+## 🌯 Role
 
-|  Route  |        Func        |  Role  |
-| :-----: | :----------------: | :----: |
-|  USER   |  유저 결정 리스트 조회  | 김경린 |
-|   QUESTION   |     질문 생성      |  김희빈  |
-|      |     질문 결과 결정      |  김희빈  |
-|      |     질문 후기 작성      |  김경린  |
+|  Route  |        Func        |  Role  | Done |
+| :-----: | :----------------: | :----: | :--: |
+|  USER   |  유저 결정 리스트 조회  | 김희빈, 김경린 | ✅ |
+|   QUESTION   |     질문 결과 결정      |  김희빈  | ✅ |
+|      |     질문 후기 작성      |  김경린  |✅ |
 
 
 
@@ -50,7 +49,7 @@
 </br>
 
 
-## Convention
+## 🌯 Convention
 
 - [Commit Convention](https://coordinated-vein-c40.notion.site/Commit-Convention-4079223cc20a46d3bab05195d590665a)
 - [Code Convention](https://coordinated-vein-c40.notion.site/Code-Convention-58abe59721a94edcbf76df42e079c268)
@@ -62,7 +61,7 @@
 </br>
 
 
-## Project Foldering
+## 🌯 Project Foldering
 ```
 🗂 src
     🗂 config
@@ -100,7 +99,7 @@
 
 </br>
 
-## Dependencies Module
+## 🌯 Dependencies Module
 
 ```json
 {
