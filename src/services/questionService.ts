@@ -1,4 +1,4 @@
-import { QuestionCreateDTO, ChoicesDTO } from "../interfaces/question/questionDTO";
+import { QuestionCreateDTO, DecisionCreateDTO } from "../interfaces/question/questionDTO";
 import { BaseResponseDTO } from "../interfaces/base/baseDTO";
 import Question from "../models/Question";
 
@@ -7,7 +7,10 @@ import Question from "../models/Question";
  */
 const createQuestion = async (questionCreateDTO: QuestionCreateDTO) => {
   try {
-    const question = new Question(questionCreateDTO);
+    const question = new Question({
+      user: questionCreateDTO.userId,
+      question: questionCreateDTO.question,
+    });
 
     await question.save();
 
@@ -23,18 +26,11 @@ const createQuestion = async (questionCreateDTO: QuestionCreateDTO) => {
 };
 
 /**
- * @선택지_조회
+ * @질문_결과
  */
-const getChoices = async (questionId: string) => {
+const createDecision = async (questionId: string, decisionCreateDTO: DecisionCreateDTO) => {
   try {
-    const data: ChoicesDTO | null = await Question.findById(questionId, "choices -_id");
-
-    if (!data) return null;
-
-    const { choices } = data;
-
-    if (!choices.length) return ["yes", "no"];
-    return choices;
+    await Question.findByIdAndUpdate(questionId, decisionCreateDTO);
   } catch (error) {
     console.log(error);
     throw error;
@@ -43,5 +39,5 @@ const getChoices = async (questionId: string) => {
 
 export default {
   createQuestion,
-  getChoices,
+  createDecision,
 };

@@ -1,4 +1,5 @@
-const drawRandom = (choices: string[]) => {
+const drawRandom = () => {
+  const choices = ["yes", "no"];
   const randomIndex = Math.round(Math.random());
   const result = choices[randomIndex];
 

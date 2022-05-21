@@ -11,9 +11,6 @@ const QuestionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  choices: {
-    type: [String],
-  },
   decision: {
     type: String,
   },
