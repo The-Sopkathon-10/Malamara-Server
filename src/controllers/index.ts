@@ -1,3 +1,4 @@
 import questionController from "./questionController";
+import userController from "./userController";
 
-export { questionController };
+export { questionController, userController };

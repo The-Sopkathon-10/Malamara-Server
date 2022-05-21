@@ -11,6 +11,10 @@ const message = {
 
   // user
   CREATED_USER_SUCCESS: "유저 생성 성공",
+  NO_USER: "존재하지 않는 유저입니다",
+  READ_USER_QUESTIONS_SUCCESS: "유저 질문 리스트 조회 성공",
+
+  
 };
 
 export default message;
