@@ -14,7 +14,7 @@ const QuestionSchema = new mongoose.Schema({
   decision: {
     type: String,
   },
-  content: {
+  review: {
     type: String,
   },
 });
